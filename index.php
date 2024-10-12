@@ -36,9 +36,17 @@ function formatDate($date)
 </head>
 
 <body>
-  <div style="position: absolute; top: 20px; right: 20px;">
-    <a href="logout.php" style="color: #fff; text-decoration: none;">
-      <i class="fa-solid fa-right-from-bracket" style="font-size: 24px;"></i>
+  <div class="filter-container">
+    <label for="filter" class="filter-label">Filter Tasks:</label>
+    <select id="filter" class="filter-select">
+      <option value="all">All</option>
+      <option value="completed">Completed</option>
+      <option value="not_completed">Not Completed</option>
+    </select>
+  </div>
+  <div class="logout-container">
+    <a href="logout.php" class="logout-link">
+      <i class="fa-solid fa-right-from-bracket logout-icon"></i>
     </a>
   </div>
 
@@ -57,13 +65,13 @@ function formatDate($date)
       <?php foreach ($tasks as $task): ?>
         <div class="task">
           <input
-            type="checkbox"
+            type="checkbox" y
             id="task-<?= $task['id'] ?>"
             name="progress"
             class="progress <?= $task['completed'] ? 'done' : '' ?>"
             data-task-id="<?= $task['id'] ?>"
             <?= $task['completed'] ? 'checked' : '' ?>>
-            
+
           <label for="task-<?= $task['id'] ?>"></label>
 
           <p>
@@ -72,6 +80,8 @@ function formatDate($date)
               <i class="fa-solid fa-check" style="color: #28a745; margin-left: 5px;"></i>
             <?php endif; ?>
           </p>
+
+          <p><strong>Description:</strong> <?= $task['description'] ?></p>
 
           <p><strong>Created:</strong> <?= formatDate($task['created_at']) ?></p>
           <p><strong>Finished:</strong> <?= formatDate($task['finished_at']) ?></p>

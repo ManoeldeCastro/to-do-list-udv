@@ -82,7 +82,26 @@ body {
   max-height: 400px;
   overflow-y: auto;
   overflow-x: hidden;
+  scrollbar-width: thin; 
+  scrollbar-color: #28a745 #10101d;
 }
+#tasks::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  #tasks::-webkit-scrollbar-track {
+    background-color: #10101d;
+    border-radius: 10px;
+  }
+  
+  #tasks::-webkit-scrollbar-thumb {
+    background-color: #28a745;
+    border-radius: 10px;
+  }
+  
+  #tasks::-webkit-scrollbar-thumb:hover {
+    background-color: #34d058;
+  }
 
 .task {
   display: flex;
@@ -260,3 +279,54 @@ body {
 #login-container a:hover {
   text-decoration: underline;
 }
+
+.filter-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .filter-label {
+    color: #fff;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .filter-select {
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #1f1f2e;
+    color: #fff;
+    border: 1px solid #28a745;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .filter-select:hover {
+    background-color: #2d2d3f;
+    border-color: #34d058;
+  }
+  
+  .filter-select:focus {
+    border-color: #34d058;
+    box-shadow: 0 0 5px rgba(52, 208, 88, 0.5);
+  }
+
+  .logout-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .logout-link {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .logout-icon {
+    font-size: 24px;
+  }
