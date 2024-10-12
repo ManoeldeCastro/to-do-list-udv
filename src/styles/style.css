@@ -127,3 +127,74 @@ body {
         width: 300px;
     }
 }
+
+/* Estilo para a página de login e registro */
+#login-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: #10101d;
+    padding: 18px;
+    border-radius: 8px;
+    width: 430px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#login-container h1 {
+    color: #e5f9ff;
+    font-size: 28px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-form, .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-form input, .register-form input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #bbe1fa;
+    color: #e5f9ff;
+    font-size: 16px;
+    padding: 4px;
+    transition: all 0.3s ease;
+}
+
+.login-form input:focus-visible, .register-form input:focus-visible {
+    outline: none;
+    border-bottom: 2px solid #e5f9ff;
+}
+
+.login-button, .register-button {
+    background-color: #bbe1fa;
+    color: #10101d;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.login-button:hover, .register-button:hover {
+    background-color: #e5f9ff;
+    color: #10101d;
+    scale: 1.05;
+}
+
+#login-container a {
+    color: #bbe1fa;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#login-container a:hover {
+    text-decoration: underline;
+}
+

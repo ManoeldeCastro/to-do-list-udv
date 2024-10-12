@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+
 require_once('database/conn.php');
 
 $tasks = [];
@@ -22,6 +28,12 @@ if ($sql->rowCount() > 0) {
 </head>
 
 <body>
+  <div style="position: absolute; top: 20px; right: 20px;">
+    <a href="logout.php" style="color: #fff; text-decoration: none;">
+      <i class="fa-solid fa-right-from-bracket" style="font-size: 24px;"></i>
+    </a>
+  </div>
+
   <div id="to_do">
     <h1>Things to do</h1>
 
