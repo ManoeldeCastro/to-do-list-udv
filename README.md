@@ -1,4 +1,3 @@
-````markdown
 # To-Do List Application
 
 ## Descrição
@@ -18,7 +17,6 @@ Esta aplicação web simples permite aos usuários gerenciar suas tarefas de for
    ```bash
    git clone [https://github.com/ManoeldeCastro/to-do-list-udv.git](https://github.com/ManoeldeCastro/to-do-list-udv.git)
    ```
-````
 
 2. **Inicie os contêineres Docker:**
    ```bash
