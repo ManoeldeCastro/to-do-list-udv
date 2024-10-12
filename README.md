@@ -27,6 +27,30 @@ Esta aplicação web simples permite aos usuários gerenciar suas tarefas de for
    ```bash
    http://localhost:8080
    ```
+4.Criar as tabelas no banco de dados: Caso seja necessário criar as tabelas no banco de dados PostgreSQL pela primeira vez, siga estes passos:
+   Acesse o contêiner do PostgreSQL:
+   ```bash
+   docker exec -it postgres-db psql -U postgres -d to_do_list
+   ```
+   Crie as tabelas users e task executando o seguinte SQL:
+   ```bash
+   CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+   );
+
+   CREATE TABLE task (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    description TEXT,
+    completed BOOLEAN DEFAULT false,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    finished_at TIMESTAMP
+   );
+```
+
+
 
    O servidor web estará rodando e conectado ao banco de dados PostgreSQL.
 
@@ -43,6 +67,15 @@ index.php        # Página principal da aplicação
 login.php        # Página de login
 register.php     # Página de registro
 ```
+
+Considerações
+Banco de Dados: O PostgreSQL estará rodando no contêiner Docker com as seguintes credenciais:
+Host: db
+Porta: 5432
+Banco de Dados: to_do_list
+Usuário: postgres
+Senha: 1234
+Essas credenciais e a configuração do banco estão no arquivo docker-compose.yml e serão usadas automaticamente ao iniciar o contêiner.
 
 ## Contribuindo
 
