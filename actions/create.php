@@ -2,10 +2,12 @@
 
 require_once('../database/conn.php');
 
-$description = filter_input(INPUT_POST,  'description');
+$name = filter_input(INPUT_POST, 'name');
+$description = filter_input(INPUT_POST, 'description');
 
-if ($description) {
-    $sql = $pdo->prepare("INSERT INTO task (description) VALUES (:description)");
+if ($name && $description) {
+    $sql = $pdo->prepare("INSERT INTO task (name, description) VALUES (:name, :description)");
+    $sql->bindValue(':name', $name);
     $sql->bindValue(':description', $description);
     $sql->execute();
 

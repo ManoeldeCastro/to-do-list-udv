@@ -1,200 +1,262 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
 
 * {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-image: url('../images/background.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url('../images/background.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #to_do {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    background-color: #10101d;
-    padding: 18px;
-    border-radius: 8px;
-    width: 430px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background-color: #10101d;
+  padding: 18px;
+  border-radius: 8px;
+  width: 430px;
 }
 
 #to_do h1 {
-    color: #e5f9ff;
-    font-size: 28px;
-    text-transform: uppercase;
+  color: #e5f9ff;
+  font-size: 28px;
+  text-transform: uppercase;
 }
 
 .to-do-form {
-    display: flex;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 2px;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .to-do-form input {
-    background-color: transparent;
-    border: none;
-    color: #e5f9ff;
-    font-size: 16px;
-    width: 100%;
-    padding: 4px;
-    border-bottom: 2px solid #bbe1fa;
+  background-color: transparent;
+  border: none;
+  color: #e5f9ff;
+  font-size: 16px;
+  width: calc(50% - 10px);
+  padding: 8px;
+  border-bottom: 2px solid #bbe1fa;
 }
 
 .to-do-form input:focus-visible {
-    outline: none;
+  outline: none;
+  border-bottom: 2px solid #e5f9ff;
 }
 
-.to-do-form .form-button {
-    border: none;
-    min-width: 40px;
-    min-height: 40px;
-    background-color: #bbe1fa;
-    border-radius: 100%;
-    font-size: 20px;
-    transition: scale 0.5s ease;
+.to-do-form button {
+  background-color: #bbe1fa;
+  border: none;
+  border-radius: 50%;
+  color: #10101d;
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: scale 0.5s ease;
 }
 
-.to-do-form .form-button:hover {
-    cursor: pointer;
-    scale: 1.05;
+.to-do-form button:hover {
+  scale: 1.05;
 }
 
 #tasks {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-height: 400px;
-    overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .task {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #262626;
-    background-color: #191933;
-    padding: 8px 12px;
-    border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #191933;
+  padding: 15px;
+  border-radius: 5px;
+  gap: 15px;
+  color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.task p {
+  margin: 0;
+  flex-basis: 100%;
 }
 
 .task .progress {
-    margin-right: 10px;
-}
-
-.task .progress.done + .task-description {
-    text-decoration: line-through;
-    color: #e5f9ffa7;
-}
-
-.task .task-description {
-    font-size: 16px;
-    color: #fff;
-    padding: 4px 0px;
-    width: 100%;
+  margin-right: 10px;
 }
 
 .task .task-actions {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
-.action-button {
-    font-size: 16px;
+.task .task-actions a {
+  color: #bbe1fa;
+  font-size: 18px;
 }
 
-.action-button.edit-button {
-    color: #6c9bbc;
-}
-
-.action-button.delete-button {
-    color: #bbe1fa;
+.task .progress.done + .task-description {
+  text-decoration: line-through;
+  color: #e5f9ffa7;
 }
 
 .hidden {
-    display: none !important;
+  display: none !important;
 }
 
-@media screen and (max-width: 600px) {
-    #to_do {
-        width: 300px;
-    }
-}
+@media (max-width: 600px) {
+  .to-do-form input {
+    width: 100%;
+  }
 
-/* Estilo para a página de login e registro */
-#login-container {
-    display: flex;
+  .task {
     flex-direction: column;
-    gap: 25px;
-    background-color: #10101d;
-    padding: 18px;
-    border-radius: 8px;
-    width: 430px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: left;
+  }
+
+  .task p {
+    flex-basis: auto;
+  }
+
+  #to_do {
+    width: 100%;
+  }
+}
+
+.task input[type='checkbox'] {
+  display: none;
+}
+
+.task input[type='checkbox'] + label {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.task input[type='checkbox'] + label:before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 2px solid #bbe1fa;
+  border-radius: 4px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.task input[type='checkbox']:checked + label:after {
+  content: '\f00c';
+  font-family: 'FontAwesome';
+  position: absolute;
+  top: 0;
+  left: 4px;
+  font-size: 14px;
+  color: #bbe1fa;
+  transition: all 0.3s ease;
+}
+
+.task input[type='checkbox']:checked + label:before {
+  background-color: #bbe1fa;
+  border-color: #bbe1fa;
+}
+
+.task input[type='checkbox']:focus + label:before {
+  outline: 2px solid #e5f9ff;
+}
+
+#login-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background-color: #10101d;
+  padding: 18px;
+  border-radius: 8px;
+  width: 430px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 #login-container h1 {
-    color: #e5f9ff;
-    font-size: 28px;
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 20px;
+  color: #e5f9ff;
+  font-size: 28px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.login-form, .register-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.login-form,
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.login-form input, .register-form input {
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid #bbe1fa;
-    color: #e5f9ff;
-    font-size: 16px;
-    padding: 4px;
-    transition: all 0.3s ease;
+.login-form input,
+.register-form input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #bbe1fa;
+  color: #e5f9ff;
+  font-size: 16px;
+  padding: 4px;
+  transition: all 0.3s ease;
 }
 
-.login-form input:focus-visible, .register-form input:focus-visible {
-    outline: none;
-    border-bottom: 2px solid #e5f9ff;
+.login-form input:focus-visible,
+.register-form input:focus-visible {
+  outline: none;
+  border-bottom: 2px solid #e5f9ff;
 }
 
-.login-button, .register-button {
-    background-color: #bbe1fa;
-    color: #10101d;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
+.login-button,
+.register-button {
+  background-color: #bbe1fa;
+  color: #10101d;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
 }
 
-.login-button:hover, .register-button:hover {
-    background-color: #e5f9ff;
-    color: #10101d;
-    scale: 1.05;
+.login-button:hover,
+.register-button:hover {
+  background-color: #e5f9ff;
+  color: #10101d;
+  scale: 1.05;
 }
 
 #login-container a {
-    color: #bbe1fa;
-    text-align: center;
-    text-decoration: none;
-    font-size: 14px;
+  color: #bbe1fa;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
 }
 
 #login-container a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
-

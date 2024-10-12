@@ -1,8 +1,8 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit;
+  header("Location: login.php");
+  exit;
 }
 
 require_once('database/conn.php');
@@ -13,6 +13,14 @@ $sql = $pdo->query("SELECT * FROM task ORDER BY id ASC");
 
 if ($sql->rowCount() > 0) {
   $tasks = $sql->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function formatDate($date)
+{
+  if ($date) {
+    return date('d/m/y - H:i', strtotime($date));
+  }
+  return 'Not finished yet';
 }
 ?>
 <!DOCTYPE html>
@@ -38,7 +46,8 @@ if ($sql->rowCount() > 0) {
     <h1>Things to do</h1>
 
     <form action="actions/create.php" method="POST" class="to-do-form">
-      <input type="text" name="description" placeholder="Write your task here" required>
+      <input type="text" name="name" placeholder="Task Name" required>
+      <input type="text" name="description" placeholder="Task Description" required>
       <button type="submit" class="form-button">
         <i class="fa-solid fa-plus"></i>
       </button>
@@ -49,14 +58,23 @@ if ($sql->rowCount() > 0) {
         <div class="task">
           <input
             type="checkbox"
+            id="task-<?= $task['id'] ?>"
             name="progress"
             class="progress <?= $task['completed'] ? 'done' : '' ?>"
             data-task-id="<?= $task['id'] ?>"
             <?= $task['completed'] ? 'checked' : '' ?>>
+            
+          <label for="task-<?= $task['id'] ?>"></label>
 
-          <p class="task-description">
-            <?= $task['description'] ?>
+          <p>
+            <strong>Name:</strong> <?= $task['name'] ?>
+            <?php if ($task['completed']): ?>
+              <i class="fa-solid fa-check" style="color: #28a745; margin-left: 5px;"></i>
+            <?php endif; ?>
           </p>
+
+          <p><strong>Created:</strong> <?= formatDate($task['created_at']) ?></p>
+          <p><strong>Finished:</strong> <?= formatDate($task['finished_at']) ?></p>
 
           <div class="task-actions">
             <a class="action-button edit-button">

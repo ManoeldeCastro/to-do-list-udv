@@ -25,6 +25,7 @@ $(document).ready(function () {
       dataType: 'json',
       success: function (response) {
         if (response.success) {
+          location.reload()
         } else {
           alert('Erro ao editar a tarefa')
         }
