@@ -2,89 +2,79 @@
 
 ## Visão Geral do Projeto
 
-O **To-Do List Application** é uma aplicação web simples que permite aos usuários gerenciar suas tarefas, fornecendo funcionalidades como criar, editar, concluir e excluir tarefas. A aplicação foi construída com foco em uma interface intuitiva e funcional, utilizando tecnologias como PHP no back-end, jQuery no front-end, PostgreSQL para o banco de dados, e Docker para a configuração do ambiente de desenvolvimento.
-
-O projeto foi dividido em sprints curtos, com foco em funcionalidades chave como o sistema de autenticação, a filtragem de tarefas e a organização eficiente do fluxo de trabalho através de contêineres Docker.
+O **To-Do List Application** é uma aplicação web que permite aos usuários gerenciar suas tarefas. O projeto foi desenvolvido utilizando tecnologias como PHP no back-end, jQuery no front-end, PostgreSQL para o banco de dados e Docker para o ambiente de desenvolvimento. A organização do projeto seguiu uma abordagem ágil, com sprints curtos, focando em entregas constantes de funcionalidades.
 
 ## Organização das Tarefas no Backlog e Sprint
-
-### Backlog e Sprint
-
-As tarefas foram organizadas de maneira a garantir o desenvolvimento ágil da aplicação, com foco em entregas iterativas e constantes.
 
 ### Sprint 1 (11 a 12 de Outubro, 2024)
 
 #### Tarefas Concluídas:
-- **Estrutura básica da página inicial.** (11 de outubro, 2024)
-  - Início da construção da interface, com uma página simples de entrada.
+
+- **Estrutura básica da página inicial criada.** (11 de outubro, 2024)
+  - Desenvolvimento da interface principal da aplicação.
 
 - **Configuração inicial de jQuery e estilos CSS.** (11 de outubro, 2024)
-  - Adição de interatividade à página, com o uso de jQuery para manipulação dinâmica dos elementos DOM.
+  - Adição de interatividade com jQuery e aplicação de estilos.
 
 - **Implementação da lógica de criação e edição de tarefas.** (11 de outubro, 2024)
-  - Introdução da funcionalidade CRUD para tarefas, permitindo aos usuários criar e editar suas tarefas.
+  - Implementação do CRUD para tarefas, permitindo criar, editar e excluir tarefas.
 
-- **Teste inicial de jQuery no projeto.** (11 de outubro, 2024)
-  - Verificação e teste da interação entre front-end e back-end usando jQuery e AJAX.
+- **Teste inicial de jQuery.** (11 de outubro, 2024)
+  - Teste de funcionalidade do jQuery no projeto.
 
-- **Implementação do CRUD no back-end e lógica de requisições AJAX.** (12 de outubro, 2024)
-  - Finalização da comunicação assíncrona entre front-end e back-end, utilizando requisições AJAX.
+- **Implementação do CRUD no back-end e lógica AJAX.** (12 de outubro, 2024)
+  - Integração das funcionalidades de back-end com o front-end através de AJAX.
 
-- **Implementação de login e registro no front-end e back-end.** (12 de outubro, 2024)
-  - Criação de sistema de autenticação de usuários, tanto no front-end quanto no back-end, permitindo login e registro.
+- **Implementação de login e registro.** (12 de outubro, 2024)
+  - Criação de sistema de autenticação de usuários.
 
-- **Configuração do Docker e Docker Compose. Ajustes de layout.** (12 de outubro, 2024)
-  - Configuração completa do ambiente de desenvolvimento utilizando Docker, possibilitando uma experiência de desenvolvimento mais ágil.
+- **Configuração do Docker e Docker Compose.** (12 de outubro, 2024)
+  - Configuração do ambiente de desenvolvimento com Docker para facilitar a execução do projeto.
 
-- **Filtro de tarefas concluídas e não concluídas.** (12 de outubro, 2024)
-  - Adição de uma funcionalidade que permite ao usuário filtrar tarefas com base no status de conclusão.
+- **Implementação do filtro de tarefas concluídas ou não concluídas.** (12 de outubro, 2024)
+  - Filtro que permite exibir tarefas concluídas ou não concluídas de forma organizada.
 
-- **Atualização do README.md com instruções detalhadas.** (12 de outubro, 2024)
-  - Inclusão de um README detalhado para que outros desenvolvedores possam entender o projeto e configurá-lo facilmente.
+- **Melhoria na estilização do checkbox.** (12 de outubro, 2024)
+  - Ajustes visuais no componente de checkbox para uma melhor experiência do usuário.
 
-#### Tarefas em Progresso:
-- **Melhoria na estilização do checkbox.**
-  - O objetivo é melhorar a aparência visual da interface, com uma abordagem mais moderna e interativa para os componentes de UI.
+- **Aprimoramento da responsividade da aplicação.** (12 de outubro, 2024)
+  - Garantia de que a aplicação funcione de forma adequada em dispositivos móveis e diferentes tamanhos de tela.
 
-- **Aprimoramento da responsividade da aplicação.**
-  - Garantir que o layout da aplicação se ajuste corretamente a diferentes tamanhos de tela e dispositivos móveis.
+- **Atualização do README.md.** (12 de outubro, 2024)
+  - Instruções detalhadas sobre o projeto e sua configuração adicionadas ao arquivo README.
 
-#### Tarefas Futuras:
+## Tarefas Futuras:
+
 - **Notificações de lembrete de tarefas.**
-  - Sistema que notifica os usuários sobre suas tarefas por meio de lembretes.
+  - Permitir que os usuários recebam lembretes de suas tarefas.
 
 - **Sistema de categorias.**
-  - Funcionalidade que permitirá aos usuários organizar suas tarefas em diferentes categorias.
+  - Adicionar a funcionalidade de organizar tarefas em categorias distintas.
 
 - **Exportar tarefas.**
-  - Adicionar a opção de exportar as tarefas em formatos como CSV ou PDF.
+  - Adicionar a funcionalidade de exportar tarefas em formatos como CSV ou PDF.
 
 - **Melhoria no layout de login e registro.**
-  - Ajustes no visual das páginas de autenticação, visando melhorar a usabilidade e a experiência do usuário.
+  - Ajustes para melhorar a usabilidade das páginas de autenticação.
 
 ## Principais Desafios Encontrados
 
-O principal desafio enfrentado durante o desenvolvimento do projeto foi a **integração com o Docker**. Como era a primeira vez lidando profundamente com a configuração de ambientes Docker para PHP e PostgreSQL, houve uma curva de aprendizagem inicial para compreender o funcionamento dos contêineres, volumes e redes.
+O principal desafio durante o desenvolvimento foi a **integração com o Docker**. Embora já tivesse utilizado Docker anteriormente, foi a primeira vez que configurei um ambiente completo, incluindo contêineres para PHP e PostgreSQL. Houve uma curva de aprendizado, especialmente na criação e ajuste da configuração para garantir o funcionamento adequado de todos os serviços. No entanto, essa experiência foi encarada como uma **oportunidade de aprendizagem**, e a utilização do Docker trouxe mais agilidade para o processo de desenvolvimento, além de garantir consistência entre diferentes ambientes.
 
-Contudo, esse desafio foi visto como uma **oportunidade de aprendizagem**, permitindo entender melhor o ciclo de vida dos contêineres e como otimizar o ambiente de desenvolvimento. A configuração com Docker não apenas trouxe mais agilidade para o desenvolvimento local, mas também facilitou a consistência entre diferentes ambientes de trabalho.
 
 ## Processo de Desenvolvimento e Divisão de Tempo
 
-O desenvolvimento foi organizado em um processo iterativo, com foco em **sprints curtos**, cada um com entregas funcionais e incrementais. Abaixo está uma breve visão de como o tempo foi dividido entre as principais tarefas:
+O desenvolvimento seguiu um processo iterativo com **sprints curtos**. A divisão de tempo foi organizada para garantir que cada funcionalidade fosse entregue com qualidade e dentro do prazo estipulado. Aqui está um resumo da divisão de tempo:
 
 - **Dia 1 (11 de outubro, 2024)**:
-  - Estruturação da aplicação.
-  - Configuração de front-end com HTML, CSS e jQuery.
-  - Implementação inicial do CRUD no back-end e conectividade com o banco de dados.
+  - Criação da interface inicial.
+  - Configuração de jQuery e estilos básicos.
+  - Implementação da lógica de criação e edição de tarefas.
 
 - **Dia 2 (12 de outubro, 2024)**:
-  - Foco na autenticação de usuários (login e registro).
-  - Configuração do Docker e Docker Compose para criar um ambiente de desenvolvimento integrado.
-  - Implementação da filtragem de tarefas por status (concluídas ou não).
-  - Ajustes no layout e estilo da aplicação.
+  - Criação do sistema de login e registro.
+  - Configuração do ambiente com Docker.
+  - Implementação de filtros para tarefas e melhorias na interface.
+  - Melhoria na responsividade para dispositivos móveis.
 
-Esse processo de desenvolvimento ágil permitiu o progresso contínuo, ao mesmo tempo em que facilitou a adaptação rápida às necessidades do projeto, como a implementação do filtro de tarefas e ajustes no design.
-
----
-
-Com esse ritmo de trabalho, foi possível entregar um **produto funcional**, com suporte a múltiplas funcionalidades e preparado para expansão futura. O uso de Docker, mesmo sendo um desafio inicial, foi um marco importante que otimizou o fluxo de trabalho.
+Com essa abordagem, foi possível manter o fluxo de trabalho contínuo, garantindo entregas constantes e de qualidade.
