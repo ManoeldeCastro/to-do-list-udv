@@ -68,13 +68,16 @@ login.php        # Página de login
 register.php     # Página de registro
 ```
 
-Considerações
-Banco de Dados: O PostgreSQL estará rodando no contêiner Docker com as seguintes credenciais:
-Host: db
-Porta: 5432
-Banco de Dados: to_do_list
-Usuário: postgres
-Senha: 1234
+## Considerações
+
+```bash
+   Banco de Dados: O PostgreSQL estará rodando no contêiner Docker com as seguintes credenciais:
+   Host: db
+   Porta: 5432
+   Banco de Dados: to_do_list
+   Usuário: postgres
+   Senha: 1234
+```
 Essas credenciais e a configuração do banco estão no arquivo docker-compose.yml e serão usadas automaticamente ao iniciar o contêiner.
 
 ## Contribuindo
